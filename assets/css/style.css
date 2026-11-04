@@ -1,0 +1,301 @@
+:root {
+  --verde-agua: #3ff0d8;
+  --azul: #7fc6e6;
+  --lilas: #a9a9ec;
+  --rosa: #d37ff2;
+  --roxo-escuro: #3a0b3f;
+  --magenta: #8e1265;
+  --texto: #2a1630;
+  --texto-suave: #5b4a63;
+  --branco: #ffffff;
+  --card: rgba(255, 255, 255, 0.55);
+  --borda: rgba(255, 255, 255, 0.7);
+  --sombra: 0 10px 30px rgba(58, 11, 63, 0.12);
+  --raio: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--texto);
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--verde-agua) 0%, var(--azul) 35%, var(--lilas) 65%, var(--rosa) 100%) fixed;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--roxo-escuro);
+  color: var(--branco);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.skip:focus { top: 16px; }
+
+a:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; }
+
+/* ---------- Menu ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px clamp(16px, 4vw, 48px);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.nav-logo {
+  font-family: 'Andika', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--roxo-escuro);
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  gap: clamp(12px, 3vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul a {
+  color: var(--roxo-escuro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav ul a:hover, .nav ul a.ativo { color: var(--magenta); border-color: var(--magenta); }
+
+/* ---------- Layout ---------- */
+section { padding: 96px 16px; }
+
+.wrap { width: min(1080px, 100%); margin: 0 auto; }
+
+h2 {
+  margin: 0 0 24px;
+  font-family: 'Andika', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--roxo-escuro);
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-family: 'Andika', sans-serif;
+  font-size: 1.25rem;
+  color: var(--roxo-escuro);
+}
+
+p { margin: 0 0 1em; }
+
+/* ---------- Capa ---------- */
+.capa {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  align-items: center;
+}
+
+.capa-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+}
+
+.ola, .eu-sou {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  color: var(--roxo-escuro);
+}
+
+.nome {
+  margin: 4px 0;
+  font-family: 'Andika', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.15;
+  color: var(--roxo-escuro);
+}
+
+.digitando {
+  font-weight: 700;
+  color: var(--magenta);
+  border-right: 2px solid var(--magenta);
+  padding-right: 2px;
+  animation: cursor 0.8s steps(1) infinite;
+}
+
+/* Garante a altura da linha mesmo quando a palavra está vazia */
+.digitando:empty::before { content: '\200b'; }
+
+@keyframes cursor { 50% { border-color: transparent; } }
+
+.foto {
+  width: clamp(200px, 28vw, 320px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 16px 40px rgba(58, 11, 63, 0.25);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 26px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--branco);
+  background: var(--magenta);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(142, 18, 101, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(142, 18, 101, 0.35); }
+
+.btn-claro { color: var(--magenta); background: var(--branco); }
+
+/* ---------- Sobre ---------- */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.sobre-grid p { color: var(--texto); font-size: 1.05rem; }
+
+.fotos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.fotos img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.fotos img:first-child { grid-row: span 2; aspect-ratio: auto; height: 100%; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; gap: 24px; }
+
+.cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.card {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+}
+
+.card p { color: var(--texto-suave); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--magenta);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+}
+
+.projeto { display: flex; flex-direction: column; }
+
+.projeto .tags { margin-bottom: 18px; }
+
+.links-projeto { display: flex; gap: 16px; margin-top: auto; }
+
+.links-projeto a { font-weight: 600; color: var(--roxo-escuro); }
+
+.links-projeto a:hover { color: var(--magenta); }
+
+/* ---------- Contato ---------- */
+.contato { text-align: center; }
+
+.contato p { font-size: 1.1rem; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.rodape {
+  padding: 28px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--roxo-escuro);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .sobre-grid, .cards-3 { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  section { padding: 72px 16px; }
+  .nav ul { display: none; }
+  .capa-grid { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 28px; }
+  .capa-grid .foto { order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .digitando { animation: none; }
+}
