@@ -11,7 +11,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+html { scroll-behavior: smooth; scroll-padding-top: 0; }
 
 body {
   margin: 0;
@@ -266,12 +266,31 @@ h2::before { content: '> '; color: var(--pink); }
 }
 
 /* ---------- Quem é Mands ---------- */
+/* A seção inteira cabe na tela: painel de texto largo + faixa de fotos embaixo */
+#sobre { padding: 66px 16px 16px; }
+
 .sobre {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  width: min(1200px, 100%);
 }
+
+.sobre .hud { padding-bottom: 24px; }
+
+.sobre .prompt { margin-top: 8px; }
+
+.sobre p { font-size: 0.95rem; line-height: 1.55; }
+
+.titulo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.titulo-linha .btn { margin-top: 0; }
 
 .terminal-bar {
   display: flex;
@@ -314,14 +333,14 @@ h2::before { content: '> '; color: var(--pink); }
 
 .grid-fotos {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
   gap: 10px;
 }
 
 .grid-fotos figure {
   position: relative;
   margin: 0;
-  aspect-ratio: 1;
+  height: clamp(100px, 19vh, 190px);
   overflow: hidden;
   border: 1px solid rgba(5, 217, 232, 0.6);
 }
@@ -344,11 +363,6 @@ h2::before { content: '> '; color: var(--pink); }
   mix-blend-mode: screen;
   pointer-events: none;
 }
-
-.grid-fotos figure.largo { grid-column: span 2; aspect-ratio: auto; }
-
-/* A foto larga acompanha a altura das quadradas da mesma linha */
-.grid-fotos figure.largo img { position: absolute; inset: 0; }
 
 .grid-fotos figure:hover img { transform: scale(1.08); filter: saturate(1.5); }
 
@@ -523,7 +537,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* ---------- Responsivo ---------- */
 @media (max-width: 860px) {
-  .sobre { grid-template-columns: minmax(0, 1fr); }
+  .grid-fotos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-fotos figure.largo { grid-column: span 2; }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
 }
 
