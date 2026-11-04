@@ -40,16 +40,16 @@ E acesse http://localhost:8000.
 
 ## Publicar no GitHub Pages
 
-1. Crie um repositório no GitHub (ex.: `portfolio-amanda`) e envie o projeto:
+1. Crie um repositório no GitHub (ex.: `Career-Portfolio`) e envie o projeto:
    ```bash
    git add .
    git commit -m "Primeira versão do portfolio"
-   git remote add origin https://github.com/SEU-USUARIO/portfolio-amanda.git
+   git remote add origin https://github.com/mandamattosg/Career-Portfolio.git
    git push -u origin main
    ```
 2. No repositório, vá em **Settings → Pages** e, em **Source**, escolha **GitHub Actions**.
 3. A cada `push` na branch `main` o site é publicado automaticamente em
-   `https://SEU-USUARIO.github.io/portfolio-amanda/`.
+   `https://mandamattosg.github.io/Career-Portfolio/`.
 
 > Dica: se o repositório se chamar `SEU-USUARIO.github.io`, o site fica direto em `https://SEU-USUARIO.github.io/`.
 
