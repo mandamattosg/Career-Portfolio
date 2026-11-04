@@ -3,68 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda Gontijo — Engenheira</title>
-  <meta name="description" content="Portfolio de Amanda Gontijo: engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista." />
-  <meta name="theme-color" content="#7fd3e6" />
+  <title>Amanda Gontijo — Portfolio</title>
+  <meta name="description" content="Portfolio de carreira de Amanda Gontijo: engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista." />
+  <meta name="theme-color" content="#07060f" />
 
   <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn etc.) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Amanda Gontijo — Engenheira" />
+  <meta property="og:title" content="Amanda Gontijo — Portfolio" />
   <meta property="og:description" content="Engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista." />
   <meta property="og:image" content="assets/img/foto-amanda.jpg" />
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <a class="skip" href="#sobre">Pular para o conteúdo</a>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
 
-  <header class="nav">
-    <a class="nav-logo" href="#inicio">AG</a>
-    <nav aria-label="Principal">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="nav" aria-label="Principal">
+    <a class="nav-logo" href="#capa">AMANDA<span>_</span></a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
   <main>
     <!-- ================= CAPA ================= -->
-    <section class="capa" id="inicio">
-      <div class="wrap capa-grid">
-        <div class="capa-texto">
-          <p class="ola">Olá, meu nome é</p>
-          <h1 class="nome">Amanda Gontijo</h1>
-          <p class="eu-sou">
-            Eu sou
-            <!-- As palavras que vão sendo digitadas ficam em data-palavras, separadas por | -->
-            <span class="digitando" data-palavras="engenheira|desenvolvedora de IA|criadora de conteúdo|leitora|artista" aria-hidden="true"></span>
-            <span class="sr-only">engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista</span>
-          </p>
+    <section class="capa" id="capa">
+      <div class="wrap">
+        <div class="hud">
+          <div>
+            <div class="hud-label"><span>sys://career.v1</span><span>● online</span></div>
+            <p class="ola">Olá, meu nome é</p>
+            <h1 class="glitch" data-text="Amanda Gontijo">Amanda Gontijo</h1>
+            <p class="eu-sou">
+              Eu sou
+              <!-- Palavras digitadas na capa: separe por | -->
+              <span class="digitando" data-palavras="engenheira|desenvolvedora de IA|criadora de conteúdo|leitora|artista" aria-hidden="true"></span>
+              <span class="sr-only">engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista</span>
+            </p>
+            <a class="btn" href="#sobre">Iniciar</a>
+          </div>
+          <div class="avatar"><img src="assets/img/foto-amanda.jpg" alt="Foto de Amanda Gontijo" width="800" height="800" /></div>
         </div>
-        <img class="foto" src="assets/img/foto-amanda.jpg" alt="Foto de Amanda Gontijo" width="800" height="800" />
       </div>
     </section>
 
     <!-- ================= SOBRE ================= -->
     <section id="sobre">
-      <div class="wrap sobre-grid">
-        <div>
+      <div class="wrap sobre">
+        <div class="hud">
+          <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i>&nbsp;amanda@career: ~</div>
           <h2>Sobre mim</h2>
-          <p>Sou engenheira, com experiência em inteligência artificial e programação. Gosto de transformar conceitos científicos e tecnológicos em soluções e conteúdos criativos, acessíveis e curiosos.</p>
-          <p>Fora do código, sou leitora, criadora de conteúdo e artista — e é justamente essa mistura de engenharia, literatura e criatividade que forma a minha forma de resolver problemas.</p>
-          <a class="btn" href="#projetos">Ver projetos</a>
+          <p class="prompt" aria-hidden="true"><b>$</b> whoami</p>
+          <!-- CONTEÚDO A PREENCHER -->
+          <p>[ texto sobre você ]</p>
+          <a class="btn" href="#habilidades">Saber mais</a>
         </div>
-        <div class="fotos">
-          <img src="assets/img/women-techmakers.jpg" alt="Amanda no evento Women Techmakers" loading="lazy" style="object-position:55% 30%" />
-          <img src="assets/img/laboratorio.jpg" alt="Amanda em um laboratório" loading="lazy" style="object-position:60% 55%" />
-          <img src="assets/img/metodo-cientifico.jpg" alt="Amanda apresentando sobre método científico" loading="lazy" style="object-position:72% 40%" />
+        <div class="grid-fotos">
+          <figure><img src="assets/img/women-techmakers.jpg" alt="Amanda no evento Women Techmakers" loading="lazy" style="object-position:55% 30%" /></figure>
+          <figure><img src="assets/img/laboratorio.jpg" alt="Amanda em um laboratório" loading="lazy" style="object-position:60% 55%" /></figure>
+          <figure><img src="assets/img/metodo-cientifico.jpg" alt="Amanda apresentando sobre método científico" loading="lazy" style="object-position:72% 40%" /></figure>
         </div>
       </div>
     </section>
@@ -73,25 +79,18 @@
     <section id="habilidades">
       <div class="wrap">
         <h2>Habilidades</h2>
-        <!-- Edite as listas abaixo com as suas tecnologias reais. -->
-        <div class="cards cards-3">
-          <article class="card">
-            <h3>Inteligência Artificial</h3>
-            <ul class="tags">
-              <li>Machine Learning</li><li>LLMs</li><li>Visão computacional</li>
-            </ul>
+        <div class="cards">
+          <article class="hud">
+            <div class="hud-label"><span>módulo</span><span>01</span></div>
+            <div class="card-id" aria-hidden="true">01</div>
+            <h3>[ área ]</h3>
+            <p>[ descrição ]</p>
           </article>
-          <article class="card">
-            <h3>Programação</h3>
-            <ul class="tags">
-              <li>Python</li><li>JavaScript</li><li>Git</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Engenharia</h3>
-            <ul class="tags">
-              <li>Método científico</li><li>Análise de dados</li><li>Prototipagem</li>
-            </ul>
+          <article class="hud">
+            <div class="hud-label"><span>módulo</span><span>02</span></div>
+            <div class="card-id" aria-hidden="true">02</div>
+            <h3>[ área ]</h3>
+            <p>[ descrição ]</p>
           </article>
         </div>
       </div>
@@ -101,40 +100,39 @@
     <section id="projetos">
       <div class="wrap">
         <h2>Projetos</h2>
-        <!-- Para adicionar um projeto, copie um <article> e troque título, texto, tags e links. -->
-        <div class="cards cards-3">
-          <article class="card projeto">
-            <h3>Nome do projeto</h3>
-            <p>Uma ou duas frases sobre o problema e o que você construiu.</p>
-            <ul class="tags"><li>Python</li><li>IA</li></ul>
-            <div class="links-projeto"><a href="#">Código</a><a href="#">Demo</a></div>
+        <div class="divider"></div>
+        <div class="lista-conteudo">
+          <article class="hud">
+            <div class="hud-label"><span>projeto</span><span>#001</span></div>
+            <h3>[ nome do projeto ]</h3>
+            <p>[ descrição ]</p>
+            <a class="btn" href="#">Ver</a>
           </article>
-          <article class="card projeto">
-            <h3>Nome do projeto</h3>
-            <p>Uma ou duas frases sobre o problema e o que você construiu.</p>
-            <ul class="tags"><li>JavaScript</li></ul>
-            <div class="links-projeto"><a href="#">Código</a><a href="#">Demo</a></div>
+          <article class="hud">
+            <div class="hud-label"><span>projeto</span><span>#002</span></div>
+            <h3>[ nome do projeto ]</h3>
+            <p>[ descrição ]</p>
+            <a class="btn" href="#">Ver</a>
           </article>
-          <article class="card projeto">
-            <h3>Nome do projeto</h3>
-            <p>Uma ou duas frases sobre o problema e o que você construiu.</p>
-            <ul class="tags"><li>Engenharia</li></ul>
-            <div class="links-projeto"><a href="#">Código</a><a href="#">Demo</a></div>
+          <article class="hud">
+            <div class="hud-label"><span>projeto</span><span>#003</span></div>
+            <h3>[ nome do projeto ]</h3>
+            <p>[ descrição ]</p>
+            <a class="btn" href="#">Ver</a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ================= CONTATO ================= -->
-    <section id="contato" class="contato">
+    <section class="contato" id="contato">
       <div class="wrap">
-        <h2>Vamos conversar?</h2>
-        <p>Aberta a oportunidades, parcerias e boas conversas sobre tecnologia e livros.</p>
-        <!-- Troque os href="#" pelos seus links reais. -->
+        <h2 class="neon">Contato</h2>
+        <p class="sub">// conectar</p>
         <div class="links">
-          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-claro" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-claro" href="mailto:">E-mail</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:">E-mail</a>
         </div>
       </div>
     </section>

@@ -7,9 +7,9 @@ Portfolio de **Amanda Gontijo**: engenheira, desenvolvedora de IA, criadora de c
 Site estático, sem dependências nem etapa de build:
 
 - HTML5
-- CSS3 (Grid, gradiente, cards translúcidos)
+- CSS3 (Grid, animações, visual cyberpunk/neon)
 - JavaScript puro (efeito de digitação na capa, menu com seção ativa)
-- Fontes [Andika](https://fonts.google.com/specimen/Andika) e [Inter](https://fonts.google.com/specimen/Inter)
+- Fontes [Orbitron](https://fonts.google.com/specimen/Orbitron) e [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
 
 ## Estrutura
 
