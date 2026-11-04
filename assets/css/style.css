@@ -250,7 +250,7 @@ h2::before { content: '> '; color: var(--pink); }
   position: relative;
   width: clamp(160px, 22vw, 230px);
   aspect-ratio: 1;
-  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  border-radius: 50%;
   background: linear-gradient(135deg, var(--cyan), var(--pink));
   padding: 4px;
   filter: drop-shadow(0 0 18px rgba(255, 42, 109, 0.5));
@@ -261,7 +261,7 @@ h2::before { content: '> '; color: var(--pink); }
   height: 100%;
   object-fit: cover;
   object-position: 50% 40%;
-  clip-path: inherit;
+  border-radius: 50%;
   filter: saturate(1.2) contrast(1.05);
 }
 
