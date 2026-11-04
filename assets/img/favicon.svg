@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <polygon points="16,2 48,2 62,32 48,62 16,62 2,32" fill="#07060f" stroke="#ff2a6d" stroke-width="4"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="30" font-weight="900" fill="#05d9e8">M</text>
+  <!-- Setinha do cursor em rosa neon, com contorno escuro para aparecer em abas claras e escuras -->
+  <path d="M14 4 L14 52 L26 41 L34 59 L43 55 L35 37 L51 37 Z"
+        fill="#ff2a6d" stroke="#07060f" stroke-width="4" stroke-linejoin="round"/>
 </svg>
