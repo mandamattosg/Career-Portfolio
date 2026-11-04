@@ -11,7 +11,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 0; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 0; }
 
 body {
   margin: 0;
@@ -20,7 +20,7 @@ body {
   font-family: 'Share Tech Mono', 'Courier New', monospace;
   font-size: 1rem;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ---------- Fundo: céu neon + chão quadriculado em perspectiva ---------- */
@@ -73,7 +73,10 @@ section {
   padding: 72px 16px;
 }
 
-.wrap { width: min(1040px, 100%); }
+.wrap { width: min(1040px, 100%); min-width: 0; }
+
+/* As listas que rolam para o lado não podem alargar a página */
+.linha-projetos, .grid-fotos { min-width: 0; max-width: 100%; }
 
 /* ---------- Painel HUD com cantos cortados ---------- */
 .hud {
@@ -688,9 +691,31 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 }
 
 /* ---------- Responsivo ---------- */
+/* Projetos em telas menores: cards empilhados (2 por linha no tablet, 1 no celular) */
+@media (max-width: 900px) {
+  .lista-conteudo.linha-projetos {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+  .linha-projetos .projeto-img { width: auto; max-height: none; aspect-ratio: 4 / 3; }
+  .linha-projetos + .btn-secao { margin-top: 24px; }
+}
+
+@media (max-width: 600px) {
+  .lista-conteudo.linha-projetos { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .linha-projetos .projeto-img { aspect-ratio: 16 / 10; }
+  .linha-projetos .hud h3 { font-size: 1.1rem; }
+  .linha-projetos .hud p { font-size: 0.9rem; }
+}
+
 @media (max-width: 860px) {
-  /* Telas estreitas: as 7 fotos continuam em uma linha, rolando para o lado */
-  .grid-fotos { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 130px; overflow-x: auto; padding-bottom: 8px; }
+  /* Telas estreitas: as 7 fotos aparecem todas, em mosaico 4 + 3 com a última linha centralizada */
+  .grid-fotos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .grid-fotos figure { flex: 0 0 calc((100% - 3 * 8px) / 4); }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards.habilidades .hud.largo { grid-column: span 2; }
@@ -710,8 +735,6 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .cards, .cards.habilidades { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades .hud.largo { grid-column: auto; }
   .lista-conteudo .tags { justify-content: flex-start; }
-  .lista-conteudo.linha-projetos { grid-auto-columns: 78vw; }
-  .grid-fotos { gap: 6px; }
   .nav ul { display: none; }
 }
 
