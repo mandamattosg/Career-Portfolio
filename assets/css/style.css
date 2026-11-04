@@ -537,7 +537,15 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .cards.habilidades .tags span { font-size: 0.78rem; }
 
-#habilidades .btn { align-self: flex-start; margin-top: 24px; }
+/* Botão menor, centralizado e encostado na borda de baixo dos cards */
+#habilidades .btn {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  margin-top: -18px;
+  padding: 9px 22px;
+  font-size: 0.75rem;
+}
 
 .tags.idiomas b { color: var(--pink); font-weight: normal; }
 
