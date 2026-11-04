@@ -292,15 +292,7 @@ h2::before { content: '> '; color: var(--pink); }
 
 .sobre p { font-size: 0.95rem; line-height: 1.55; }
 
-.titulo-linha {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-}
-
-.titulo-linha .btn { margin-top: 0; }
+.sobre .btn { margin-top: 20px; }
 
 .terminal-bar {
   display: flex;
@@ -430,6 +422,10 @@ h2::before { content: '> '; color: var(--pink); }
 }
 
 .contato .sub { text-align: center; color: var(--cyan); letter-spacing: 0.3em; margin-top: 12px; }
+
+.contato .wrap { width: min(1200px, 100%); }
+
+.contato .grid-fotos { margin-top: 48px; }
 
 /* ---------- Acessibilidade ---------- */
 .skip {
