@@ -581,13 +581,13 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* Projetos pessoais: sempre os 5 cards em uma linha, todos do mesmo tamanho.
    Se a tela for estreita, a linha rola para o lado. */
-#pessoais { padding: 72px 16px 40px; }
+#pessoais, #profissionais { padding: 72px 16px 40px; }
 
-#pessoais .wrap { width: min(1320px, 100%); }
+#pessoais .wrap, #profissionais .wrap { width: min(1320px, 100%); }
 
-#pessoais .divider { margin: 16px 0 20px; }
+#pessoais .divider, #profissionais .divider { margin: 16px 0 20px; }
 
-.lista-conteudo.pessoais-lista {
+.lista-conteudo.linha-projetos {
   grid-template-columns: none;
   grid-auto-flow: column;
   grid-auto-columns: minmax(230px, 1fr);
@@ -599,27 +599,27 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   scrollbar-color: var(--pink) transparent;
 }
 
-.pessoais-lista .hud { padding: 18px 18px 20px; scroll-snap-align: start; }
+.linha-projetos .hud { padding: 18px 18px 20px; scroll-snap-align: start; }
 
 /* Imagem quadrada e de tamanho fixo em todos os cards */
-.pessoais-lista .projeto-img { margin: -18px -18px 14px; height: auto; aspect-ratio: 1; max-height: 28vh; width: auto; }
+.linha-projetos .projeto-img { margin: -18px -18px 14px; height: auto; aspect-ratio: 1; max-height: 28vh; width: auto; }
 
-.pessoais-lista .projeto-img img { object-fit: cover; object-position: top center; }
+.linha-projetos .projeto-img img { object-fit: cover; object-position: top center; }
 
-.pessoais-lista .projeto-img.inteira img { object-fit: contain; }
+.linha-projetos .projeto-img.inteira img { object-fit: contain; }
 
 /* Telas baixas (notebooks 720p): imagem menor para o card caber */
 @media (max-height: 740px) {
-  .pessoais-lista .projeto-img { max-height: 22vh; }
+  .linha-projetos .projeto-img { max-height: 22vh; }
 }
 
-.pessoais-lista .hud h3 { font-size: 1rem; }
+.linha-projetos .hud h3 { font-size: 1rem; }
 
-.pessoais-lista .hud p { font-size: 0.85rem; }
+.linha-projetos .hud p { font-size: 0.85rem; }
 
-.pessoais-lista .tags span { font-size: 0.72rem; padding: 2px 8px; }
+.linha-projetos .tags span { font-size: 0.72rem; padding: 2px 8px; }
 
-.pessoais-lista .destaque { font-size: 0.72rem; }
+.linha-projetos .destaque { font-size: 0.72rem; }
 
 /* Selo de destaque (prêmio, resultado) com link */
 .destaque {
@@ -706,7 +706,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .cards, .cards.habilidades { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades .hud.largo { grid-column: auto; }
   .lista-conteudo .tags { justify-content: flex-start; }
-  .lista-conteudo.pessoais-lista { grid-auto-columns: 78vw; }
+  .lista-conteudo.linha-projetos { grid-auto-columns: 78vw; }
   .grid-fotos { gap: 6px; }
   .nav ul { display: none; }
 }
