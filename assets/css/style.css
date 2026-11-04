@@ -264,6 +264,13 @@ h2::before { content: '> '; color: var(--pink); }
   background: linear-gradient(135deg, var(--cyan), var(--pink));
   padding: 4px;
   filter: drop-shadow(0 0 18px rgba(255, 42, 109, 0.5));
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+/* Foto da capa flutuando de leve */
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .avatar img {
