@@ -326,7 +326,7 @@ h2::before { content: '> '; color: var(--pink); }
   border: 1px solid rgba(5, 217, 232, 0.6);
 }
 
-.grid-fotos figure:nth-child(even) { border-color: rgba(255, 42, 109, 0.7); transform: translateY(16px); }
+.grid-fotos figure:nth-child(even) { border-color: rgba(255, 42, 109, 0.7); }
 
 .grid-fotos img {
   width: 100%;
@@ -344,6 +344,11 @@ h2::before { content: '> '; color: var(--pink); }
   mix-blend-mode: screen;
   pointer-events: none;
 }
+
+.grid-fotos figure.largo { grid-column: span 2; aspect-ratio: auto; }
+
+/* A foto larga acompanha a altura das quadradas da mesma linha */
+.grid-fotos figure.largo img { position: absolute; inset: 0; }
 
 .grid-fotos figure:hover img { transform: scale(1.08); filter: saturate(1.5); }
 
@@ -534,7 +539,6 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .hud-label { font-size: 0.65rem; }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .grid-fotos { gap: 6px; }
-  .grid-fotos figure:nth-child(even) { transform: translateY(10px); }
   .nav ul { display: none; }
 }
 
