@@ -342,14 +342,14 @@ h2::before { content: '> '; color: var(--pink); }
 
 .grid-fotos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 10px;
 }
 
 .grid-fotos figure {
   position: relative;
   margin: 0;
-  height: clamp(100px, 19vh, 190px);
+  aspect-ratio: 4 / 5; /* todas iguais: retângulo um pouco mais alto que largo */
   overflow: hidden;
   border: 1px solid rgba(5, 217, 232, 0.6);
 }
@@ -544,15 +544,19 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .cards.habilidades .tags span { font-size: 0.78rem; }
 
-/* Botão menor, centralizado e encostado na borda de baixo dos cards */
-#habilidades .btn {
+/* Botão de próxima seção: menor, centralizado e encostado na borda de baixo dos cards */
+.btn.btn-secao {
   position: relative;
   z-index: 2;
+  display: table;
   align-self: center;
-  margin-top: -18px;
+  margin: -18px auto 0;
   padding: 9px 22px;
   font-size: 0.75rem;
 }
+
+/* Nas listas que rolam para o lado, desconta o espaço da barra de rolagem */
+.linha-projetos + .btn-secao { margin-top: -28px; }
 
 .tags.idiomas b { color: var(--pink); font-weight: normal; }
 
@@ -602,7 +606,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 .linha-projetos .hud { padding: 18px 18px 20px; scroll-snap-align: start; }
 
 /* Imagem quadrada e de tamanho fixo em todos os cards */
-.linha-projetos .projeto-img { margin: -18px -18px 14px; height: auto; aspect-ratio: 1; max-height: 28vh; width: auto; }
+.linha-projetos .projeto-img { margin: -18px -18px 14px; height: auto; aspect-ratio: 1; max-height: 25vh; width: auto; }
 
 .linha-projetos .projeto-img img { object-fit: cover; object-position: top center; }
 
@@ -610,7 +614,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* Telas baixas (notebooks 720p): imagem menor para o card caber */
 @media (max-height: 740px) {
-  .linha-projetos .projeto-img { max-height: 22vh; }
+  .linha-projetos .projeto-img { max-height: 19vh; }
 }
 
 .linha-projetos .hud h3 { font-size: 1rem; }
@@ -685,8 +689,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* ---------- Responsivo ---------- */
 @media (max-width: 860px) {
-  .grid-fotos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .grid-fotos figure.largo { grid-column: span 2; }
+  /* Telas estreitas: as 7 fotos continuam em uma linha, rolando para o lado */
+  .grid-fotos { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 130px; overflow-x: auto; padding-bottom: 8px; }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards.habilidades .hud.largo { grid-column: span 2; }
