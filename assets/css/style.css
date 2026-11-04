@@ -579,23 +579,34 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .projeto-pessoal .btn { align-self: flex-start; }
 
-/* Projetos pessoais: 5 cards lado a lado ocupando a altura da seção */
-#pessoais {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 72px 16px 40px;
-}
+/* Projetos pessoais: sempre os 5 cards em uma linha, todos do mesmo tamanho.
+   Se a tela for estreita, a linha rola para o lado. */
+#pessoais { padding: 72px 16px 40px; }
 
-#pessoais .wrap { flex: 1; display: flex; flex-direction: column; width: min(1320px, 100%); }
+#pessoais .wrap { width: min(1320px, 100%); }
 
 #pessoais .divider { margin: 16px 0 20px; }
 
-.pessoais-lista { flex: 1; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.lista-conteudo.pessoais-lista {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(230px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink) transparent;
+}
 
-.pessoais-lista .hud { padding: 20px 18px; }
+.pessoais-lista .hud { padding: 18px 18px 20px; scroll-snap-align: start; }
 
-.pessoais-lista .projeto-img { margin: -20px -18px 14px; height: clamp(110px, 24vh, 240px); }
+/* Imagem quadrada e de tamanho fixo em todos os cards */
+.pessoais-lista .projeto-img { margin: -18px -18px 14px; height: auto; aspect-ratio: 1; max-height: 28vh; width: auto; }
+
+.pessoais-lista .projeto-img img { object-fit: cover; object-position: top center; }
+
+.pessoais-lista .projeto-img.inteira img { object-fit: contain; }
 
 .pessoais-lista .hud h3 { font-size: 1rem; }
 
@@ -677,7 +688,6 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .grid-fotos figure.largo { grid-column: span 2; }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pessoais-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards.habilidades .hud.largo { grid-column: span 2; }
 }
 
@@ -694,8 +704,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .hud-label { font-size: 0.65rem; }
   .cards, .cards.habilidades { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades .hud.largo { grid-column: auto; }
-  .pessoais-lista { grid-template-columns: minmax(0, 1fr); }
   .lista-conteudo .tags { justify-content: flex-start; }
+  .lista-conteudo.pessoais-lista { grid-auto-columns: 78vw; }
   .grid-fotos { gap: 6px; }
   .nav ul { display: none; }
 }
