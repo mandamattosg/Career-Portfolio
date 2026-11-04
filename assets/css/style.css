@@ -182,12 +182,22 @@ h2::before { content: '> '; color: var(--pink); }
 
 /* ---------- Capa ---------- */
 .capa .hud {
+  --recuo-foto: 48px; /* afasta a foto da borda direita; "online" termina alinhado com ela */
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 40px;
+  gap: 8px 40px;
   padding: 48px;
 }
+
+.capa .hud > .hud-label {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  margin-bottom: 12px;
+  padding-right: var(--recuo-foto);
+}
+
+.capa .hud > .avatar { margin-right: var(--recuo-foto); }
 
 .capa .sub {
   margin: 14px 0 0;
@@ -549,7 +559,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .terminal-bar { margin: -22px -18px 18px; padding: 10px 18px; }
   .capa .hud { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; padding: 32px 20px; gap: 24px; }
   .capa .hud > div { order: 2; }
-  .capa .hud > .avatar { order: 1; }
+  .capa .hud > .avatar { order: 1; margin-right: 0; }
+  .capa .hud > .hud-label { order: 2; padding-right: 0; margin-bottom: 0; }
   .tags { justify-content: center; }
   .hud-label { font-size: 0.65rem; }
   .cards { grid-template-columns: minmax(0, 1fr); }
