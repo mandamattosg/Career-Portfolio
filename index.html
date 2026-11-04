@@ -29,7 +29,8 @@
     <ul>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#pessoais">Pessoais</a></li>
+      <li><a href="#profissionais">Profissionais</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
@@ -98,33 +99,86 @@
             <div class="tags idiomas"><span>Português <b>nativo</b></span><span>Inglês <b>avançado</b></span><span>Francês <b>intermediário</b></span><span>Espanhol <b>intermediário</b></span></div>
           </article>
         </div>
-        <a class="btn" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#pessoais">Ver projetos</a>
       </div>
     </section>
 
-    <!-- ================= PROJETOS ================= -->
-    <section id="projetos">
+    <!-- ================= PROJETOS PESSOAIS ================= -->
+    <!-- Com foto e link do GitHub. Para adicionar um projeto, copie um <article>. -->
+    <section id="pessoais">
       <div class="wrap">
-        <h2>Projetos</h2>
+        <h2>Projetos pessoais</h2>
+        <div class="divider"></div>
+        <div class="lista-conteudo pessoais-lista">
+          <article class="hud projeto-pessoal">
+            <div class="projeto-img inteira"><img src="assets/img/projetos/livros-bot.png" alt="Logo do Livros Bot: robô com lupa e livros" loading="lazy" /></div>
+            <div class="hud-label"><span>projeto</span><span>#001</span></div>
+            <h3>Book Price Bot</h3>
+            <p>Bot do Telegram que monitora preços de livros na Amazon e avisa quando caem, com filas, workers e atualização adaptativa conforme a popularidade.</p>
+            <div class="tags"><span>Python</span><span>Telegram Bot</span><span>PostgreSQL</span><span>SQLAlchemy</span></div>
+            <a class="btn" href="https://github.com/mandamattosg/Livros-Bot" target="_blank" rel="noopener">GitHub</a>
+          </article>
+          <article class="hud projeto-pessoal">
+            <div class="projeto-img inteira" style="--fundo-img: #fff"><img src="assets/img/projetos/allena.png" alt="Logo da Allena: axolote rosa com fone de ouvido" loading="lazy" /></div>
+            <div class="hud-label"><span>projeto</span><span>#002</span></div>
+            <h3>Allena</h3>
+            <a class="destaque" href="https://www.linkedin.com/posts/amanda-mattos-gontijo_ganhamos-no-s%C3%A1bado-2604-nossa-activity-7322624111090761728-kqRw" target="_blank" rel="noopener">★ 1º lugar no Inovathon WTM 2025</a>
+            <p>Extensão para Chrome com IA que torna a web acessível a pessoas com deficiência, com navegação por voz mais rápida que leitores de tela.</p>
+            <div class="tags"><span>JavaScript</span><span>Python</span><span>Flask</span><span>Gemini API</span></div>
+            <a class="btn" href="https://github.com/mandamattosg/Allena" target="_blank" rel="noopener">GitHub</a>
+          </article>
+          <article class="hud projeto-pessoal">
+            <div class="projeto-img"><img src="assets/img/projetos/energy-radar.png" alt="Print do Energy Content Bot no Telegram com o Radar do Setor Elétrico da semana" loading="lazy" style="object-position: top center" /></div>
+            <div class="hud-label"><span>projeto</span><span>#003</span></div>
+            <h3>Energy Radar</h3>
+            <p>Coleta semanal de notícias do setor elétrico brasileiro: deduplica, ranqueia e gera com o Gemini um resumo enviado no Telegram.</p>
+            <div class="tags"><span>Python</span><span>Gemini API</span><span>PostgreSQL</span><span>Telegram Bot</span></div>
+            <a class="btn" href="https://github.com/mandamattosg/Energy-Content" target="_blank" rel="noopener">GitHub</a>
+          </article>
+          <article class="hud projeto-pessoal">
+            <div class="projeto-img"><img src="assets/img/projetos/content-radar.png" alt="Print do Content Bot no Telegram com o resumo do Content Radar" loading="lazy" style="object-position: top center" /></div>
+            <div class="hud-label"><span>projeto</span><span>#004</span></div>
+            <h3>Content Radar</h3>
+            <p>Acompanha notícias, Reddit e Google Trends do mercado literário e usa o Gemini para sugerir ideias de vídeos curtos, enviadas no Telegram.</p>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>Gemini API</span><span>PostgreSQL</span></div>
+            <a class="btn" href="https://github.com/mandamattosg/Content-Bot" target="_blank" rel="noopener">GitHub</a>
+          </article>
+          <article class="hud projeto-pessoal">
+            <div class="projeto-img inteira"><img src="assets/img/projetos/kindle-price-bot.png" alt="Logo do Kindle Bot: robô segurando um Kindle" loading="lazy" /></div>
+            <div class="hud-label"><span>projeto</span><span>#005</span></div>
+            <h3>Kindle Price Bot</h3>
+            <p>Bot do Telegram que monitora o preço dos Kindles na Amazon Brasil e avisa quando cai, com fila de notificações e aprovação de promoções.</p>
+            <div class="tags"><span>Python</span><span>Telegram Bot</span><span>PostgreSQL</span></div>
+            <a class="btn" href="https://github.com/mandamattosg/Kindle-Price-Bot" target="_blank" rel="noopener">GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS PROFISSIONAIS ================= -->
+    <!-- Só descrição. Para adicionar um projeto, copie um <article>. -->
+    <section id="profissionais">
+      <div class="wrap">
+        <h2>Projetos profissionais</h2>
         <div class="divider"></div>
         <div class="lista-conteudo">
-          <article class="hud">
-            <div class="hud-label"><span>projeto</span><span>#001</span></div>
+          <article class="hud projeto-prof">
+            <div class="hud-label"><span>[ empresa ]</span><span>[ período ]</span></div>
             <h3>[ nome do projeto ]</h3>
-            <p>[ descrição ]</p>
-            <a class="btn" href="#">Ver</a>
+            <p>[ descrição breve do problema, do que você fez e do resultado ]</p>
+            <div class="tags"><span>[ tecnologia ]</span><span>[ tecnologia ]</span></div>
           </article>
-          <article class="hud">
-            <div class="hud-label"><span>projeto</span><span>#002</span></div>
+          <article class="hud projeto-prof">
+            <div class="hud-label"><span>[ empresa ]</span><span>[ período ]</span></div>
             <h3>[ nome do projeto ]</h3>
-            <p>[ descrição ]</p>
-            <a class="btn" href="#">Ver</a>
+            <p>[ descrição breve do problema, do que você fez e do resultado ]</p>
+            <div class="tags"><span>[ tecnologia ]</span><span>[ tecnologia ]</span></div>
           </article>
-          <article class="hud">
-            <div class="hud-label"><span>projeto</span><span>#003</span></div>
+          <article class="hud projeto-prof">
+            <div class="hud-label"><span>[ empresa ]</span><span>[ período ]</span></div>
             <h3>[ nome do projeto ]</h3>
-            <p>[ descrição ]</p>
-            <a class="btn" href="#">Ver</a>
+            <p>[ descrição breve do problema, do que você fez e do resultado ]</p>
+            <div class="tags"><span>[ tecnologia ]</span><span>[ tecnologia ]</span></div>
           </article>
         </div>
       </div>

@@ -564,7 +564,83 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .lista-conteudo .hud { padding: 24px; }
 
-.lista-conteudo .hud .btn { margin-top: 18px; padding: 8px 18px; font-size: 0.75rem; }
+.lista-conteudo .hud .btn { margin-top: 14px; padding: 8px 18px; font-size: 0.75rem; }
+
+/* Cards de projeto: conteúdo em coluna, botão sempre no rodapé */
+.projeto-prof, .projeto-pessoal { display: flex; flex-direction: column; }
+
+.lista-conteudo .hud p { margin-bottom: 14px; font-size: 0.9rem; line-height: 1.5; }
+
+.projeto-pessoal .hud-label, .projeto-prof .hud-label { margin-bottom: 10px; }
+
+.lista-conteudo .hud h3 { margin: 0 0 10px; }
+
+.projeto-prof .tags, .projeto-pessoal .tags { margin-top: auto; }
+
+.projeto-pessoal .btn { align-self: flex-start; }
+
+/* Projetos pessoais: 5 cards lado a lado ocupando a altura da seção */
+#pessoais {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 16px 40px;
+}
+
+#pessoais .wrap { flex: 1; display: flex; flex-direction: column; width: min(1320px, 100%); }
+
+#pessoais .divider { margin: 16px 0 20px; }
+
+.pessoais-lista { flex: 1; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+
+.pessoais-lista .hud { padding: 20px 18px; }
+
+.pessoais-lista .projeto-img { margin: -20px -18px 14px; height: clamp(110px, 24vh, 240px); }
+
+.pessoais-lista .hud h3 { font-size: 1rem; }
+
+.pessoais-lista .hud p { font-size: 0.85rem; }
+
+.pessoais-lista .tags span { font-size: 0.72rem; padding: 2px 8px; }
+
+.pessoais-lista .destaque { font-size: 0.72rem; }
+
+/* Selo de destaque (prêmio, resultado) com link */
+.destaque {
+  align-self: flex-start;
+  margin: -2px 0 12px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: var(--yellow);
+  text-decoration: none;
+  border: 1px solid var(--yellow);
+  box-shadow: 0 0 10px rgba(249, 240, 2, 0.25);
+  transition: background 0.15s, color 0.15s;
+}
+
+.destaque:hover { background: var(--yellow); color: var(--bg); }
+
+/* Imagem no topo dos projetos pessoais, encostada nas bordas do card */
+.projeto-img {
+  margin: -24px -24px 16px;
+  height: clamp(100px, 19vh, 180px);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(5, 217, 232, 0.4);
+}
+
+.projeto-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Imagem mostrada inteira (sem corte); as laterais usam a cor de fundo da arte */
+.projeto-img.inteira { --fundo-img: rgb(0, 129, 130); background: var(--fundo-img); }
+
+.projeto-img.inteira img { object-fit: contain; }
+
+.projeto-img.vazio {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: repeating-linear-gradient(45deg, rgba(5, 217, 232, 0.05) 0 10px, transparent 10px 20px);
+}
 
 /* ---------- Contato ---------- */
 .links {
@@ -601,6 +677,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .grid-fotos figure.largo { grid-column: span 2; }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pessoais-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards.habilidades .hud.largo { grid-column: span 2; }
 }
 
@@ -617,6 +694,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .hud-label { font-size: 0.65rem; }
   .cards, .cards.habilidades { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades .hud.largo { grid-column: auto; }
+  .pessoais-lista { grid-template-columns: minmax(0, 1fr); }
+  .lista-conteudo .tags { justify-content: flex-start; }
   .grid-fotos { gap: 6px; }
   .nav ul { display: none; }
 }
