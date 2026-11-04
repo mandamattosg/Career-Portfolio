@@ -556,7 +556,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 }
 
 /* Nas listas que rolam para o lado, desconta o espaço da barra de rolagem */
-.linha-projetos + .btn-secao { margin-top: -14px; }
+.linha-projetos + .btn-secao { margin-top: 4px; } /* logo abaixo dos cards, sem sobrepor */
 
 .tags.idiomas b { color: var(--pink); font-weight: normal; }
 
@@ -585,7 +585,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* Projetos pessoais: sempre os 5 cards em uma linha, todos do mesmo tamanho.
    Se a tela for estreita, a linha rola para o lado. */
-#pessoais, #profissionais { padding: 72px 16px 40px; }
+#pessoais, #profissionais { padding: 66px 16px 16px; }
 
 #pessoais .wrap, #profissionais .wrap { width: min(1320px, 100%); }
 
