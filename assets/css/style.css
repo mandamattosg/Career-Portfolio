@@ -537,6 +537,8 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .cards.habilidades .tags span { font-size: 0.78rem; }
 
+#habilidades .btn { align-self: flex-start; margin-top: 24px; }
+
 .tags.idiomas b { color: var(--pink); font-weight: normal; }
 
 .lista-conteudo {
