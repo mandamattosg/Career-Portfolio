@@ -608,6 +608,11 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .pessoais-lista .projeto-img.inteira img { object-fit: contain; }
 
+/* Telas baixas (notebooks 720p): imagem menor para o card caber */
+@media (max-height: 740px) {
+  .pessoais-lista .projeto-img { max-height: 22vh; }
+}
+
 .pessoais-lista .hud h3 { font-size: 1rem; }
 
 .pessoais-lista .hud p { font-size: 0.85rem; }
@@ -623,13 +628,9 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   padding: 3px 10px;
   font-size: 0.8rem;
   color: var(--yellow);
-  text-decoration: none;
   border: 1px solid var(--yellow);
   box-shadow: 0 0 10px rgba(249, 240, 2, 0.25);
-  transition: background 0.15s, color 0.15s;
 }
-
-.destaque:hover { background: var(--yellow); color: var(--bg); }
 
 /* Imagem no topo dos projetos pessoais, encostada nas bordas do card */
 .projeto-img {
