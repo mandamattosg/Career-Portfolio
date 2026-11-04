@@ -502,22 +502,40 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 .cards .hud p, .lista-conteudo .hud p { margin: 0; }
 
-/* Habilidades: 3 colunas, o card de IA ocupa duas */
-.cards.habilidades { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+/* Habilidades: 5 cards lado a lado ocupando toda a altura da seção */
+#habilidades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 16px 40px;
+}
 
-.cards.habilidades .hud { min-height: 0; padding: 22px 24px; }
+#habilidades .wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(1320px, 100%);
+}
 
-.cards.habilidades .hud.largo { grid-column: span 2; }
+.cards.habilidades {
+  flex: 1;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
 
-.cards.habilidades .hud-label { margin-bottom: 10px; }
+.cards.habilidades .hud { min-height: 0; padding: 24px 20px; }
 
-.card-titulo { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.cards.habilidades .hud-label { margin-bottom: 18px; }
 
-.card-titulo .card-id { font-size: 2rem; line-height: 1; }
+.card-titulo { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
 
-.card-titulo h3 { margin: 0; }
+.card-titulo .card-id { font-size: 2.4rem; line-height: 1; }
+
+.card-titulo h3 { margin: 0; font-size: 1rem; line-height: 1.35; min-height: 2.7em; }
 
 .cards.habilidades .tags { margin-top: 0; justify-content: flex-start; }
+
+.cards.habilidades .tags span { font-size: 0.78rem; }
 
 .tags.idiomas b { color: var(--pink); font-weight: normal; }
 
@@ -566,6 +584,7 @@ a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .grid-fotos figure.largo { grid-column: span 2; }
   .lista-conteudo { grid-template-columns: minmax(0, 1fr); }
   .cards.habilidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards.habilidades .hud.largo { grid-column: span 2; }
 }
 
 @media (max-width: 640px) {
