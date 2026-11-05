@@ -1,6 +1,7 @@
 # Amanda Gontijo — Portfolio
 
-Portfolio de **Amanda Gontijo**: engenheira, desenvolvedora de IA, criadora de conteúdo, leitora e artista.
+Portfolio de **Amanda Gontijo**.
+
 
 ## Tecnologias
 
